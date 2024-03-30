@@ -1,0 +1,94 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    color:#fff;
+    display: inline-block;
+}
+a{
+    text-decoration: none;
+}
+.header{  
+    font-size: 56px;
+    font-family: Jost, sans-serif;
+    margin-left: 5vw;
+}
+.personal-info{
+    display: flex;
+    padding: 4vh,4vw,4vh,4vw;
+    margin: 2%;
+    font-family: 'eurostile',sans-serif;
+}
+.info-text{
+    font-size: 42px;
+    width: 64vw;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border: #fff;
+}
+.profile-image{
+    object-fit:cover;
+    position: relative;
+    top: 0;
+    width: 24vw;
+    height: 24vw;
+    border-radius: 50%;
+    box-shadow: 4px 4px 5px rgba(255,255,255,0.3);
+}
+.more-info{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+}
+.little-text{
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
+}
+.links{
+    padding: 10px;
+    display: inline;
+}
+.icon{
+    width: 4%;
+    margin: 4px;
+}
+.empty-box{
+    min-height: 50vh;
+}
+.contacts{
+    margin: 0;
+    width: 20%;
+}
+.interests{
+    border: #fff solid 2px;
+    font-family: 'europa',sans-serif;
+    margin-top: 10vh;
+    margin-left: 2vw;
+    font-size: 36px;
+    padding: 2%;
+    border-radius: 10px;
+    width: 80vw;
+}
+.interests-list{
+    margin: 2% 2% 0 4%;
+    padding: 0;
+}
+.interests-list-item{
+    padding-bottom: 2%;
+}
+.image-list{
+    display: inline-flex;
+    margin: 4% 2% 2% 2%;
+}
+.big-image{
+    margin-right: 2%;
+    object-fit: cover;
+    max-height: 80vh;
+}
