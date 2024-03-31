@@ -95,7 +95,8 @@ a{
     max-width: 100vw;
 }
 .interests-list{
-    display: flexbox;
+    display: flex;
+    justify-content: center;
 }
 .big-icon{
     width: 20vw;
@@ -113,4 +114,7 @@ a{
     object-fit: cover;
     height: 60vh;
     max-width: 80vw;
+}
+.no-margin{
+    margin: 0;
 }
