@@ -92,4 +92,5 @@ a{
     margin-right: 2%;
     object-fit: cover;
     height: 60vh;
+    max-width: 80vw;
 }
