@@ -90,5 +90,5 @@ a{
 .big-image{
     margin-right: 2%;
     object-fit: cover;
-    max-height: 80vh;
+   width: 80vw;
 }
