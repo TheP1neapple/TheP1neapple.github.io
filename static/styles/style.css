@@ -17,6 +17,7 @@ a{
     margin: 0;
     padding-top: 4%;
     padding-left: 4%;
+    width: 100%;
     font-family: Stem, sans-serif;
     background-image: linear-gradient(to top, #f43b47 0%, #453a94 100%);
 }
@@ -122,7 +123,7 @@ a{
 
 @media all and (max-width: 425px){
 .header{
-    font-size: 4rem;
+    font-size: 2rem;
 }
 .personal-info{
     flex-direction: column;
