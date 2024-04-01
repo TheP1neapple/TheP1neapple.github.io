@@ -9,7 +9,7 @@ a{
     text-decoration: none;
 }
 .header{  
-    font-size: 80px;
+    font-size: 64px;
     line-height: 74px;
     height: 50vh;
     font-weight: 700;
@@ -54,6 +54,7 @@ a{
 .more-info{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     margin: 0;
 }
 .about{
@@ -92,12 +93,12 @@ a{
     margin-left: 2vw;
     font-size: 36px;
     padding: 2%;
-    max-width: 100vw;
 }
 .interests-list{
     display: flex;
     flex-wrap:wrap;
     justify-content: center;
+    align-items: center;
 }
 .big-icon{
     width: 20vw;
@@ -121,10 +122,11 @@ a{
     margin: 0;
 }
 
-@media all and (max-width: 425px){
+@media all and (max-width: 960px){
 .header{
     font-size: 40px;
-    line-height: 36px;
+    font-weight: normal;
+    line-height: 44px;
 }
 .personal-info{
     flex-direction: column;
@@ -142,13 +144,16 @@ a{
     height: 80vw;
     box-shadow: none;
 }
-.icon{
-   width: 16vw;
+
 }
+@media all and (max-width: 425px){
+    .icon{
+        width: 12vw;
+     }
 }
 @media all and (max-height: 425px){
     .header{
         font-size: 40px;
-        line-height: 36px;
+        line-height: 44px;
     }
 }
