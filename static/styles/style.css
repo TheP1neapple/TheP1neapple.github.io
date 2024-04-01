@@ -22,6 +22,7 @@ a{
 }
 .header-text{
     margin: 0;
+    line-height: 74px;
     padding-bottom: 4%;
 }
 .personal-info{
@@ -125,6 +126,9 @@ a{
     font-weight: normal;
     line-height: 40px;
 }
+.header-text{
+    line-height: 40px;
+}
 .personal-info{
     flex-direction: column-reverse;
 }
@@ -157,6 +161,18 @@ a{
         font-weight: normal;
         line-height: 32px;
     }
+    .header-text{
+        line-height: 32px;
+    }
+}
+@media all and (max-height: 425px){
+    .header{
+        font-size: 40px;
+        line-height: 44px;
+    }
+    .header-text{
+        line-height: 44px;
+    }
 }
 @media all and (max-width: 425px){
     
@@ -165,13 +181,10 @@ a{
         font-weight: normal;
         line-height: 24px;
     }
+    .header-text{
+        line-height: 24px;
+    }
     .little-text{
         font-size: 16px;
-    }
-}
-@media all and (max-height: 425px){
-    .header{
-        font-size: 40px;
-        line-height: 44px;
     }
 }
