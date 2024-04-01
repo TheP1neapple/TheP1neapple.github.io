@@ -120,11 +120,15 @@ a{
     margin: 0;
 }
 
-@media all and (max-width: 425px){
+@media screen and (max-width: 425px){
 .header{
-    font-size: 52px;
+    font-size: 4rem;
 }
 .personal-info{
     flex-direction: column;
+}
+.profile-image{
+    width: 80vw;
+    height: 80vw;
 }
 }
