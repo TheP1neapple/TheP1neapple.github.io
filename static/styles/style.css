@@ -39,7 +39,6 @@ a{
     display: inline-block;
     margin: 0;
     padding: 0;
-    border: #fff;
 }
 .profile-image{
     object-fit:cover;
@@ -176,7 +175,7 @@ a{
         line-height: 44px;
     }
 }
-@media all and (max-height: 300px){
+@media all and (max-width: 300px){
     .header{
         color:#000;
     }
