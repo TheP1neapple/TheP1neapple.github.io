@@ -98,12 +98,11 @@ a{
     display: flex;
     flex-wrap:wrap;
     justify-content: center;
-    align-items: center;
 }
 .big-icon{
     width: 20vw;
     height: 20vw;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .image-list{
@@ -129,26 +128,30 @@ a{
     line-height: 44px;
 }
 .personal-info{
-    flex-direction: column;
+    flex-direction: column-reverse;
 }
 .info-text{
     width: 90vw;
 }
 .big-icon{
-    width: 44vw;
-    height: 44vw;
+    width: 48vw;
+    height: 48vw;
 }
 .profile-image{
-    margin-top: 4vh;
+    margin-bottom: 4vh;
     width: 80vw;
     height: 80vw;
     box-shadow: none;
+}
+.big-image{
+    margin: 0;
 }
 
 }
 @media all and (max-width: 425px){
     .icon{
         width: 12vw;
+        height: 12vw;
      }
 }
 @media all and (max-height: 425px){
