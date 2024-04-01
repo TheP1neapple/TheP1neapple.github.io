@@ -163,7 +163,7 @@ a{
         box-shadow: none;
     }
 }
-@media all and (max-width: 425px){
+@media all and (max-width: 450px){
     .header-text{
         min-height: 20vh;
         font-size: 40px;
