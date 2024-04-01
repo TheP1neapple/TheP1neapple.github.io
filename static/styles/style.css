@@ -9,20 +9,20 @@ a{
     text-decoration: none;
 }
 .header{  
-    font-size: 64px;
-    line-height: 74px;
-    height: 50vh;
-    font-weight: 700;
-    font-style: normal;
     margin: 0;
     padding-top: 4%;
     padding-left: 4%;
-    font-family: Stem, sans-serif;
+    min-width: 300px;
     background-image: linear-gradient(to top, #f43b47 0%, #453a94 100%);
 }
 .header-text{
+    font-family: Stem, sans-serif;
+    font-size: 160px;
+    line-height: 140px;
+    min-height: 50vh;
+    font-weight: 700;
+    font-style: normal;
     margin: 0;
-    line-height: 74px;
     padding-bottom: 4%;
 }
 .personal-info{
@@ -120,30 +120,16 @@ a{
     margin: 0;
 }
 
-@media all and (max-width: 960px){
-.header{
-    font-size: 36px;
-    font-weight: normal;
-    line-height: 40px;
+@media all and (max-height: 450px){
+    .header-text{
+        font-size: 100px;
+        line-height: 92px;
+    }
 }
+@media all and (max-width: 1200px){
 .header-text{
-    line-height: 40px;
-}
-.personal-info{
-    flex-direction: column-reverse;
-}
-.info-text{
-    width: 90vw;
-}
-.big-icon{
-    width: 48vw;
-    height: 48vw;
-}
-.profile-image{
-    margin-bottom: 4vh;
-    width: 80vw;
-    height: 80vw;
-    box-shadow: none;
+    font-size: 100px;
+    line-height: 92px;
 }
 .big-image{
     margin-right: 0;
@@ -155,34 +141,33 @@ a{
     height: 8vw;
  }
 }
-@media all and (max-width: 700px){
-    .header{
-        font-size: 28px;
-        font-weight: normal;
-        line-height: 32px;
-    }
+@media all and (max-width: 760px){
     .header-text{
-        line-height: 32px;
+        font-size: 60px;
+        line-height: 52px;
     }
-}
-@media all and (max-height: 425px){
-    .header{
-        font-size: 40px;
-        line-height: 44px;
+    .personal-info{
+        flex-direction: column-reverse;
     }
-    .header-text{
-        line-height: 44px;
+    .info-text{
+        width: 90vw;
+    }
+    .big-icon{
+        width: 48vw;
+        height: 48vw;
+    }
+    .profile-image{
+        margin-bottom: 4vh;
+        width: 80vw;
+        height: 80vw;
+        box-shadow: none;
     }
 }
 @media all and (max-width: 425px){
-    
-     .header{
-        font-size: 20px;
-        font-weight: normal;
-        line-height: 24px;
-    }
     .header-text{
-        line-height: 24px;
+        min-height: 20vh;
+        font-size: 40px;
+        line-height: 36px;
     }
     .little-text{
         font-size: 16px;
