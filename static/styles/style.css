@@ -124,7 +124,7 @@ a{
 @media all and (max-width: 425px){
 .header{
     font-size: 32px;
-    font-weight: 300;
+    font-weight: normal;
     line-height: 44px;
 }
 .personal-info{
@@ -143,7 +143,7 @@ a{
     box-shadow: none;
 }
 .icon{
-   width: 8vw; 
+   width: 40px; 
 }
 }
 @media all and (max-height: 425px){
