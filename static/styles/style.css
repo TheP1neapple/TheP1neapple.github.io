@@ -123,7 +123,8 @@ a{
 
 @media all and (max-width: 425px){
 .header{
-    font-size: 2rem;
+    font-size: 40px;
+    line-height: 44px;
 }
 .personal-info{
     flex-direction: column;
@@ -140,4 +141,10 @@ a{
     height: 80vw;
     box-shadow: none;
 }
+}
+@media all and (max-height: 425px){
+    .header{
+        font-size: 40px;
+        line-height: 44px;
+    }
 }
