@@ -145,6 +145,7 @@ a{
 }
 .big-image{
     margin-right: 0;
+    max-width: 100%;
 }
 
 }
@@ -153,6 +154,11 @@ a{
         width: 12vw;
         height: 12vw;
      }
+     .header{
+        font-size: 20px;
+        font-weight: normal;
+        line-height: 24px;
+    }
 }
 @media all and (max-height: 425px){
     .header{
