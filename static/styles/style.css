@@ -123,7 +123,7 @@ a{
 
 @media all and (max-width: 425px){
 .header{
-    font-size: 32px;
+    font-size: 12px;
     font-weight: normal;
     line-height: 44px;
 }
@@ -138,12 +138,13 @@ a{
     height: 44vw;
 }
 .profile-image{
+    margin-top: 4%;
     width: 80vw;
     height: 80vw;
     box-shadow: none;
 }
 .icon{
-   width: 40px; 
+   width: 16vw;
 }
 }
 @media all and (max-height: 425px){
