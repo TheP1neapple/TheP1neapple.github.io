@@ -175,8 +175,3 @@ a{
         line-height: 44px;
     }
 }
-@media all and (max-width: 300px){
-    .header{
-        color:#000;
-    }
-}
