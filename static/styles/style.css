@@ -114,8 +114,7 @@ a{
     margin-right: 2%;
     margin-bottom: 4%;
     object-fit: cover;
-    max-height: 60vh;
-    max-width: 80vw;
+    height: 60vh;
 }
 .no-margin{
     margin: 0;
