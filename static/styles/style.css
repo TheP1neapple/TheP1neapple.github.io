@@ -9,7 +9,7 @@ a{
     text-decoration: none;
 }
 .header{  
-    font-size: 64px;
+    font-size: 80px;
     line-height: 74px;
     height: 50vh;
     font-weight: 700;
@@ -123,9 +123,8 @@ a{
 
 @media all and (max-width: 425px){
 .header{
-    font-size: 12px;
-    font-weight: normal;
-    line-height: 44px;
+    font-size: 40px;
+    line-height: 36px;
 }
 .personal-info{
     flex-direction: column;
@@ -138,7 +137,7 @@ a{
     height: 44vw;
 }
 .profile-image{
-    margin-top: 4%;
+    margin-top: 4vh;
     width: 80vw;
     height: 80vw;
     box-shadow: none;
@@ -150,6 +149,6 @@ a{
 @media all and (max-height: 425px){
     .header{
         font-size: 40px;
-        line-height: 44px;
+        line-height: 36px;
     }
 }
