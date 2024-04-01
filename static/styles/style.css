@@ -81,8 +81,7 @@ a{
     min-height: 50vh;
 }
 .contacts{
-    margin: 0;
-    width: 20%;
+    margin: 0,4vw,0,0;
 }
 .interests{
     font-family: Stem, sans-serif;
@@ -96,6 +95,7 @@ a{
 }
 .interests-list{
     display: flex;
+    flex-wrap:wrap;
     justify-content: center;
 }
 .big-icon{
@@ -106,13 +106,15 @@ a{
 
 .image-list{
     display: flex;
+    flex-wrap:wrap;
     justify-content: center;
     margin: 4% 2% 2% 2%;
 }
 .big-image{
     margin-right: 2%;
+    margin-bottom: 4%;
     object-fit: cover;
-    height: 60vh;
+    max-height: 60vh;
     max-width: 80vw;
 }
 .no-margin{
