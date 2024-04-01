@@ -147,17 +147,20 @@ a{
     margin-right: 0;
     max-width: 100%;
 }
-
+.icon{
+    width: 8vw;
+    height: 8vw;
+ }
 }
 @media all and (max-width: 425px){
-    .icon{
-        width: 12vw;
-        height: 12vw;
-     }
+    
      .header{
         font-size: 20px;
         font-weight: normal;
         line-height: 24px;
+    }
+    .little-text{
+        font-size: 16px;
     }
 }
 @media all and (max-height: 425px){
