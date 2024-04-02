@@ -9,7 +9,7 @@ a{
     text-decoration: none;
 }
 .header{  
-    margin: 0;
+    margin: 0 0 20vh 0;
     padding-top: 4%;
     padding-left: 4%;
     min-width: 300px;
@@ -27,7 +27,7 @@ a{
 }
 .personal-info{
     display: flex;
-    padding: 4vh,4vw,4vh,4vw;
+    padding: 4vh 4vw 4vh 4vw;
     margin: 2%;
     justify-content: center;
     align-items: center;
@@ -63,7 +63,7 @@ a{
     display: flex;
     font-family: 'europa',sans-serif;
     flex-direction: column;
-    padding: 4px;
+    padding: 4px 0 0 8px;
 }
 .little-text{
     font-size: 24px;
@@ -82,7 +82,7 @@ a{
     min-height: 50vh;
 }
 .contacts{
-    margin: 0,4vw,0,0;
+    margin: 0 8px 0 0;
 }
 .interests{
     font-family: Stem, sans-serif;
@@ -153,8 +153,8 @@ a{
         width: 90vw;
     }
     .big-icon{
-        width: 48vw;
-        height: 48vw;
+        width: 64vw;
+        height: 64vw;
     }
     .profile-image{
         margin-bottom: 4vh;
