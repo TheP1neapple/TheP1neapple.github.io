@@ -48,7 +48,6 @@ a{
     width: 24vw;
     height: 24vw;
     border-radius: 50%;
-    box-shadow: 4px 4px 5px rgba(255,255,255,0.3);
 }
 .more-info{
     display: flex;
@@ -134,7 +133,7 @@ a{
 .big-image{
     margin-right: 0;
     height: auto;
-    max-width: 100%;
+    max-width: 80%;
 }
 .icon{
     width: 8vw;
@@ -160,7 +159,6 @@ a{
         margin-bottom: 4vh;
         width: 80vw;
         height: 80vw;
-        box-shadow: none;
     }
 }
 @media all and (max-width: 450px){
