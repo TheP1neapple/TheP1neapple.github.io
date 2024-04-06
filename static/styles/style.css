@@ -1,21 +1,18 @@
-body{
+.page{
     margin: 0;
     padding: 0;
     background-color: #333;
     color:#fff;
     display: inline-block;
 }
-a{
-    text-decoration: none;
-}
+
 .header{  
     margin: 0 0 20vh 0;
-    padding-top: 4%;
-    padding-left: 4%;
+    padding: 4% 0 0 4%;
     min-width: 300px;
     background-image: linear-gradient(to top, #f43b47 0%, #453a94 100%);
 }
-.header-text{
+.header__text{
     font-family: Stem, sans-serif;
     font-size: 160px;
     line-height: 140px;
@@ -25,78 +22,80 @@ a{
     margin: 0;
     padding-bottom: 4%;
 }
+
 .personal-info{
     display: flex;
     padding: 4vh 4vw 4vh 4vw;
     margin: 2%;
     justify-content: center;
     align-items: center;
-    font-family: 'eurostile',sans-serif;
 }
-.info-text{
+.personal-info__text{
     text-align:center;
     font-size: 42px;
+    font-family: 'eurostile',sans-serif;
     width: 64vw;
-    display: inline-block;
     margin: 0;
     padding: 0;
 }
-.profile-image{
+.personal-info__image{
     object-fit:cover;
+    margin-left: 2%;
     position: relative;
-    top: 0;
     width: 24vw;
     height: 24vw;
     border-radius: 50%;
 }
-.more-info{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0;
-}
-.about{
-    font-size: 48px;
-}
+
 .footer{
     display: flex;
     font-family: 'europa',sans-serif;
     flex-direction: column;
     padding: 4px 0 0 8px;
 }
-.little-text{
+.footer__info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+}
+.footer__text{
     font-size: 24px;
     padding: 0;
     margin: 0;
 }
-.links{
+.footer__links{
     padding: 10px;
     display: inline;
 }
+
 .icon{
     width: 4%;
     margin: 4px;
+    text-decoration: none;
 }
-.empty-box{
-    min-height: 50vh;
-}
+
 .contacts{
     margin: 0 8px 0 0;
 }
+
 .interests{
     font-family: Stem, sans-serif;
     display: flex;
     flex-direction: column;
-    margin-top: 10vh;
-    margin-left: 2vw;
+    margin: 10vh 0 0 2vw;
     font-size: 36px;
     padding: 2%;
 }
-.interests-list{
+.interests__header{
+    font-size: 48px;
+}
+.interests__list{
     display: flex;
     flex-wrap:wrap;
     justify-content: center;
 }
+
 .big-icon{
     width: 20vw;
     height: 20vw;
@@ -110,64 +109,63 @@ a{
     margin: 4% 2% 2% 2%;
 }
 .big-image{
-    margin-right: 2%;
-    margin-bottom: 4%;
+    margin: 0 2% 4% 0;
     object-fit: cover;
     height: 60vh;
 }
-.no-margin{
+.big-image_margin_none{
     margin: 0;
 }
 
 @media all and (max-height: 450px){
-    .header-text{
+    .header__text{
         font-size: 100px;
         line-height: 92px;
     }
 }
 @media all and (max-width: 1200px){
-.header-text{
-    font-size: 100px;
-    line-height: 92px;
-}
-.big-image{
-    margin-right: 0;
-    height: auto;
-    max-width: 80%;
-}
-.icon{
-    width: 8vw;
-    height: 8vw;
- }
+    .header__text{
+        font-size: 100px;
+        line-height: 92px;
+    }
+    .big-image{
+        margin-right: 0;
+        height: auto;
+        max-width: 80%;
+    }
+    .icon{
+        width: 8vw;
+        height: 8vw;
+    }
 }
 @media all and (max-width: 760px){
-    .header-text{
+    .header__text{
         font-size: 60px;
         line-height: 52px;
     }
     .personal-info{
         flex-direction: column-reverse;
     }
-    .info-text{
+    .personal-info__text{
         width: 90vw;
     }
     .big-icon{
         width: 64vw;
         height: 64vw;
     }
-    .profile-image{
-        margin-bottom: 4vh;
+    .personal-info__image{
+        margin: 0 0 4vh 0;
         width: 80vw;
         height: 80vw;
     }
 }
 @media all and (max-width: 450px){
-    .header-text{
+    .header__text{
         min-height: 20vh;
         font-size: 40px;
         line-height: 36px;
     }
-    .little-text{
+    .footer__text{
         font-size: 16px;
     }
 }
