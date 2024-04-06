@@ -67,11 +67,12 @@
     padding: 10px;
     display: inline;
 }
-
+.footer__link{
+     text-decoration: none;
+}
 .icon{
     width: 4%;
     margin: 4px;
-    text-decoration: none;
 }
 
 .contacts{
@@ -94,7 +95,9 @@
     flex-wrap:wrap;
     justify-content: center;
 }
-
+.interests__image{
+    list-style: none;
+}
 .big-icon{
     width: 20vw;
     height: 20vw;
