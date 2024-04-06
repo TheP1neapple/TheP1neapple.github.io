@@ -13,7 +13,7 @@
     background-image: linear-gradient(to top, #f43b47 0%, #453a94 100%);
 }
 .header__text{
-    font-family: Stem, sans-serif;
+    font-family: 'Montserrat',sans-serif;
     font-size: 160px;
     line-height: 140px;
     min-height: 50vh;
@@ -33,7 +33,7 @@
 .personal-info__text{
     text-align:center;
     font-size: 42px;
-    font-family: 'eurostile',sans-serif;
+    font-family: 'Montserrat',sans-serif;
     width: 64vw;
     margin: 0;
     padding: 0;
@@ -48,7 +48,7 @@
 
 .footer{
     display: flex;
-    font-family: 'europa',sans-serif;
+    font-family: 'Montserrat',sans-serif;
     flex-direction: column;
     padding: 4px 0 0 8px;
 }
@@ -79,7 +79,7 @@
 }
 
 .interests{
-    font-family: Stem, sans-serif;
+    font-family: 'Montserrat',sans-serif;
     display: flex;
     flex-direction: column;
     margin: 10vh 0 0 2vw;
