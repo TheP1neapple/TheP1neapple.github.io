@@ -124,7 +124,12 @@
     height: 60vh;
 }
 
-
+@media all and (max-width: 300px){
+    .image-list{
+        flex-direction: column;
+        align-items: center;
+    }
+}
 @media all and (max-height: 450px){
     .header__text{
         font-size: 100px;
