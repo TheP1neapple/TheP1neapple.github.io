@@ -70,15 +70,14 @@
 .footer__link{
      text-decoration: none;
 }
+.footer__contacts{
+    margin: 0 8px 0 0;
+}
+
 .icon{
     width: 4%;
     margin: 4px;
 }
-
-.contacts{
-    margin: 0 8px 0 0;
-}
-
 .interests{
     font-family: 'Montserrat',sans-serif;
     display: flex;
