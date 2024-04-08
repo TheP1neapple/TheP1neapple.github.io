@@ -20,7 +20,11 @@
                Average C++ enjoyer & Dart fan, <br>
                MIPT HSSE 1st year student
             </p>
-            <img class="personal-info__image" src="static/images/photo.webp" alt="there should be my photo">
+            <picture>
+                <source srcset="static/images/photo.webp">
+                <source srcset="static/images/photo.jpg">
+                <img class="personal-info__image" src="static/images/photo.png" alt="there should be my photo">
+            </picture>
         </section>
         <section class="interests">
             <h2 class="interests__header">about me</h2>
@@ -32,8 +36,16 @@
             </ul>
         </section>
         <section class ="image-list">
-            <img class="big-image" src="static/images/big_image1.webp" alt="some cool big picture">
-            <img class="big-image big-image_margin_none" src="static/images/big_image2.webp" alt="another cool big picture">
+            <picture>
+                <source srcset="static/images/big_image1.webp">
+                <source srcset="static/images/big_image1.jpg">
+                <img class="big-image" src="static/images/big_image1.webp" alt="some cool big picture 1">
+            </picture>
+            <picture>
+                <source srcset="static/images/big_image2.webp">
+                <source srcset="static/images/big_image2.jpg">
+                <img class="big-image" src="static/images/big_image2.webp" alt="some cool big picture 2">
+            </picture>
         </section>
         <footer class="footer">
             <p class="footer__text">
