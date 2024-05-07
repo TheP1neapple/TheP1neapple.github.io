@@ -35,16 +35,51 @@
                 <li class="interests__image"><img class="big-icon" src="static/images/Gamer.webp" alt="there should be some icon"></li>
             </ul>
         </section>
-        <section class ="image-list">
+        <section class ="gallery">
             <picture class="big-picture">
                 <source srcset="static/images/big_image1.webp">
                 <source srcset="static/images/big_image1.jpg">
                 <img class="big-picture__image" src="static/images/big_image1.png" alt="some cool big picture 1">
             </picture>
-            <picture class="big-picture big-picture_margin_none">
+            <picture class="big-picture">
                 <source srcset="static/images/big_image2.webp">
                 <source srcset="static/images/big_image2.jpg">
                 <img class="big-picture__image" src="static/images/big_image2.png" alt="some cool big picture 2">
+            </picture>
+            <picture class="big-picture">
+                <source srcset="static/images/big_image3.webp">
+                <source srcset="static/images/big_image3.jpg">
+                <img class="big-picture__image" src="static/images/big_image3.png" alt="some cool big picture 3">
+            </picture>
+            <picture class="big-picture">
+                <source srcset="static/images/big_image4.webp">
+                <source srcset="static/images/big_image4.jpg">
+                <img class="big-picture__image" src="static/images/big_image4.png" alt="some cool big picture 4">
+            </picture>
+            <picture class="big-picture">
+                <source srcset="static/images/big_image5.webp">
+                <source srcset="static/images/big_image5.jpg">
+                <img class="big-picture__image" src="static/images/big_image5.png" alt="some cool big picture 5">
+            </picture>
+            <picture class="big-picture">
+                <source srcset="static/images/big_image6.webp">
+                <source srcset="static/images/big_image6.jpg">
+                <img class="big-picture__image" src="static/images/big_image6.png" alt="some cool big picture 6">
+            </picture>
+            <picture class="big-picture">
+                <source srcset="static/images/big_image7.webp">
+                <source srcset="static/images/big_image7.jpg">
+                <img class="big-picture__image" src="static/images/big_image7.png" alt="some cool big picture 7">
+            </picture>
+            <picture class="big-picture">
+                <source srcset="static/images/big_image8.webp">
+                <source srcset="static/images/big_image8.jpg">
+                <img class="big-picture__image" src="static/images/big_image8.png" alt="some cool big picture 8">
+            </picture>
+            <picture class="big-picture">
+                <source srcset="static/images/big_image9.webp">
+                <source srcset="static/images/big_image9.jpg">
+                <img class="big-picture__image" src="static/images/big_image9.png" alt="some cool big picture 9">
             </picture>
         </section>
         <footer class="footer">
@@ -73,5 +108,20 @@
                 </div>
             </section>
         </footer>
+    <div class="popup-wrap">
+        <div class="popup" id="popup-reminder">
+            <div class="popup__container">
+                <p class="popup__text">It's been 33333 ms since you opened this page!</p>
+            </div>
+            <button class="popup__button popup__button_close" onclick="hidePopup()"></button>
+        </div> 
+        <div class="popup" id="popup-gallery">
+            <img class="popup__image" alt="chosen picture">
+            <button class="popup__button popup__button_close" onclick="hidePopup()"></button>
+            <button class="popup__button popup__button_before" onclick="showBefore()"></button>
+            <button class="popup__button popup__button_next" onclick="showNext()"></button>
+        </div> 
+    </div>
+    <script src="static/scripts/scripts.js"></script>
     </body>
 </html>
