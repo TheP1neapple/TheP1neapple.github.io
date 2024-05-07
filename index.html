@@ -12,6 +12,9 @@
         <title>wonderful page about me</title>
     </head>
     <body class="page">
+        <menu class="menu">
+            <p class="form-caller">Contact me</p>
+        </menu>
         <header class="header">
             <h1 class="header__text">SERGEY<br>KRAVCHENKO</h1>
         </header>
@@ -121,7 +124,21 @@
             <button class="popup__button popup__button_before" onclick="showBefore()"></button>
             <button class="popup__button popup__button_next" onclick="showNext()"></button>
         </div> 
+        <div class="popup" id="popup-form">
+            <form class="popup__form">
+                <p class="popup__form__text">Form for your feedback</p>
+                <fieldset class="popup__form__fieldset">
+                    <input class="popup__form__input" type="text" placeholder="Name" required>
+                    <input class="popup__form__input" type="tel" placeholder="Mobile number">
+                    <input class="popup__form__input" type="email" placeholder="E-mail">
+                    <textarea class="popup__form__textarea" placeholder="Message"></textarea>
+                    <button class="popup__form__submit-button popup__form__submit-button_disabled" type="submit">Submit</button>
+                </fieldset>
+            </form>
+            <button class="popup__button popup__button_close" onclick="hidePopup()"></button>
+        </div>
     </div>
+
     <script src="static/scripts/scripts.js"></script>
     </body>
 </html>

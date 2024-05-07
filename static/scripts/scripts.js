@@ -2,12 +2,15 @@ let popup_wrap = document.querySelector('.popup-wrap');
 let popup_reminder = popup_wrap.querySelector('#popup-reminder');
 let popup_gallery = popup_wrap.querySelector('#popup-gallery');
 let popup_image = popup_gallery.querySelector('.popup__image');
+let popup_form = popup_wrap.querySelector('#popup-form');
 let current_image;
 
 let before_button = document.querySelector('.popup__button_before');
 let next_button = document.querySelector('.popup__button_next');
 let close_button = document.querySelectorAll('.popup__button_close');
 
+let menu = document.querySelector('.menu');
+menu.addEventListener('click',showPopup.bind(this,popup_form));
 function showPopup(popup) {
     popup.classList.add('popup__opened');
     popup_wrap.classList.add('popup-wrap_visible');
@@ -16,6 +19,7 @@ function showPopup(popup) {
 function hidePopup() {
     popup_reminder.classList.remove('popup__opened');
     popup_gallery.classList.remove('popup__opened');
+    popup_form.classList.remove('popup__opened');
     popup_wrap.classList.remove('popup-wrap_visible');
 }
 function checkButtons(image){
@@ -51,6 +55,7 @@ function showBefore(){
 
 popup_reminder.addEventListener('click',function(evt){evt.stopPropagation();});
 popup_gallery.addEventListener('click',function(evt){evt.stopPropagation();});
+popup_form.addEventListener('click',function(evt){evt.stopPropagation();});
 
 setTimeout(showPopup,333,popup_reminder);
 popup_wrap.addEventListener('click',hidePopup);
