@@ -9,8 +9,8 @@ let before_button = document.querySelector('.popup__button_before');
 let next_button = document.querySelector('.popup__button_next');
 let close_button = document.querySelectorAll('.popup__button_close');
 
-let menu = document.querySelector('.menu');
-menu.addEventListener('click',showPopup.bind(this,popup_form));
+let form_caller = document.querySelector('.form-caller');
+form_caller.addEventListener('click',showPopup.bind(this,popup_form));
 function showPopup(popup) {
     popup.classList.add('popup__opened');
     popup_wrap.classList.add('popup-wrap_visible');
@@ -63,3 +63,18 @@ popup_wrap.addEventListener('click',hidePopup);
 
 let gallery = document.querySelector('.gallery').querySelectorAll('.big-picture');
 gallery.forEach(function(item){item.addEventListener('click',showGallery.bind(this,item));});
+
+let form_number = popup_form.querySelector('#number_input');
+let form_email = popup_form.querySelector('#email_input');
+let form_button = popup_form.querySelector('.popup__form__submit-button');
+function enableButton(){
+    if(form_number.validity.valid && form_email.validity.valid){
+        form_button.classList.remove('popup__form__submit-button_disabled');
+    }else{
+        form_button.classList.add('popup__form__submit-button_disabled');
+    }
+
+}
+
+form_number.addEventListener('input',function(){enableButton();});
+form_email.addEventListener('input',function(){enableButton();});
