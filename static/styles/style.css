@@ -12,6 +12,7 @@
    height: 60px;
    background-color: #334;
    min-width: 300px;
+   transition: all linear 0.2s;
 }   
 .form-caller{
     margin: 0;
@@ -178,7 +179,6 @@
 
 .popup__container{
     width: 40vw;
-    height: 20vh;
     min-width: 120px;
     background-color: #fff;
     color: #000;
@@ -305,6 +305,12 @@
     opacity: 0.5;
     cursor: none;
     pointer-events: none;
+ }
+ .popup__form__submit-button_sent{
+    opacity: 1;
+    cursor: none;
+    pointer-events: none;
+    background-color: #0c0;
  }
  @media all and (max-height: 450px){
     .header__text{

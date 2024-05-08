@@ -3,15 +3,19 @@ let popup_reminder = popup_wrap.querySelector('#popup-reminder');
 let popup_gallery = popup_wrap.querySelector('#popup-gallery');
 let popup_image = popup_gallery.querySelector('.popup__image');
 let popup_form = popup_wrap.querySelector('#popup-form');
+
 let current_image;
 let opened_popup = null;
+let formDate;
 
 let before_button = document.querySelector('.popup__button_before');
 let next_button = document.querySelector('.popup__button_next');
 let close_button = document.querySelectorAll('.popup__button_close');
 
 let form_caller = document.querySelector('.form-caller');
-form_caller.addEventListener('click',showPopup.bind(this,popup_form));
+let menu = document.querySelector('.menu')
+
+
 function showPopup(popup) {
     if(opened_popup!=null){
         return;
@@ -26,6 +30,8 @@ function hidePopup() {
     opened_popup = null;
     popup_wrap.classList.remove('popup-wrap_visible');
 }
+
+
 function checkButtons(image){
     if (image.nextElementSibling==null){
         next_button.style.visibility='hidden';
@@ -57,20 +63,25 @@ function showBefore(){
     changePopupImage();
 }
 
+let gallery = document.querySelector('.gallery').querySelectorAll('.big-picture');
+gallery.forEach(function(item){item.addEventListener('click',showGallery.bind(this,item));});
+
+
 popup_reminder.addEventListener('click',function(evt){evt.stopPropagation();});
 popup_gallery.addEventListener('click',function(evt){evt.stopPropagation();});
 popup_form.addEventListener('click',function(evt){evt.stopPropagation();});
+
 
 setTimeout(showPopup,3333,popup_reminder);
 popup_wrap.addEventListener('click',hidePopup);
 
 
-let gallery = document.querySelector('.gallery').querySelectorAll('.big-picture');
-gallery.forEach(function(item){item.addEventListener('click',showGallery.bind(this,item));});
+form_caller.addEventListener('click',showPopup.bind(this,popup_form));
 
 let form_number = popup_form.querySelector('#number_input');
 let form_email = popup_form.querySelector('#email_input');
 let form_button = popup_form.querySelector('.popup__form__submit-button');
+
 function enableButton(){
     if(form_number.validity.valid && form_email.validity.valid){
         form_button.classList.remove('popup__form__submit-button_disabled');
@@ -83,11 +94,13 @@ function enableButton(){
 form_number.addEventListener('input',function(){enableButton();});
 form_email.addEventListener('input',function(){enableButton();});
 
-let formData = new FormData(popup_form.querySelector('.popup__form'));
-function postForm(){
-    form_button.textContent = "Submitting...";
 
+function postForm(){
+    formData = new FormData(popup_form.querySelector('.popup__form'));
+
+    form_button.textContent = "Submitting...";
     form_button.classList.add('popup__form__submit-button_disabled');
+
     fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
         body: formData,
@@ -98,10 +111,17 @@ function postForm(){
             console.log(`${key} = ${value}`);
           }
         setTimeout(function(){
-            form_button.textContent = "Submit";
-            hidePopup();
             form_button.classList.remove('popup__form__submit-button_disabled');
-        },600)
+            form_button.classList.add('popup__form__submit-button_sent');
+            form_button.textContent = "Submitted";
+            setTimeout(function(){
+                hidePopup();
+                setTimeout(function(){
+                    form_button.textContent = "Submit";
+                    form_button.classList.remove('popup__form__submit-button_sent');
+                },500);
+            },1000)
+        },600);
     })
     .then(data => {
         console.log(data);
@@ -110,7 +130,15 @@ function postForm(){
         console.log(error);
     });
 }
+
 popup_form.addEventListener('submit',function(evt){
     evt.preventDefault();
     postForm();
 })
+// window.addEventListener('scroll',function() {
+//     if (window.scrollY > 400) {
+//         menu.style.position = "fixed";
+//     } else {
+//       menu.style.position = "";
+//     }
+// });
