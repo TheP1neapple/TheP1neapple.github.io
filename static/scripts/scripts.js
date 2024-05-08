@@ -135,10 +135,37 @@ popup_form.addEventListener('submit',function(evt){
     evt.preventDefault();
     postForm();
 })
-// window.addEventListener('scroll',function() {
-//     if (window.scrollY > 400) {
-//         menu.style.position = "fixed";
-//     } else {
-//       menu.style.position = "";
-//     }
-// });
+
+
+window.addEventListener('scroll',function() {
+    if (window.scrollY > window.innerHeight) {
+        menu.classList.add('menu_fixed');
+    } else {
+      menu.classList.remove('menu_fixed');
+    }
+});
+
+function startCountdown(targetDate,counter){
+    let countdownInterval = setInterval(function(){
+        let remaining = targetDate - new Date().getTime();
+
+        let days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+
+        counter.textContent = "Remaining " + days + "d " + hours + "h " 
+                                         + minutes + "m " + seconds + "s";
+
+        if(remaining < 0){
+            clearInterval(countdownInterval);
+            counter.textContent = 'Countdown Finished';
+        }
+    },1000)
+}
+
+window.onload=function(){
+    let targetDate = new Date("June 1, 2024 00:00:00");
+    let counter = document.querySelector('.counter');
+    startCountdown(targetDate,counter);
+}
