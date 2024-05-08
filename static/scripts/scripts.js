@@ -4,6 +4,7 @@ let popup_gallery = popup_wrap.querySelector('#popup-gallery');
 let popup_image = popup_gallery.querySelector('.popup__image');
 let popup_form = popup_wrap.querySelector('#popup-form');
 let current_image;
+let opened_popup = null;
 
 let before_button = document.querySelector('.popup__button_before');
 let next_button = document.querySelector('.popup__button_next');
@@ -12,14 +13,17 @@ let close_button = document.querySelectorAll('.popup__button_close');
 let form_caller = document.querySelector('.form-caller');
 form_caller.addEventListener('click',showPopup.bind(this,popup_form));
 function showPopup(popup) {
+    if(opened_popup!=null){
+        return;
+    }
     popup.classList.add('popup__opened');
+    opened_popup = popup;
     popup_wrap.classList.add('popup-wrap_visible');
 }
 
 function hidePopup() {
-    popup_reminder.classList.remove('popup__opened');
-    popup_gallery.classList.remove('popup__opened');
-    popup_form.classList.remove('popup__opened');
+    opened_popup.classList.remove('popup__opened');
+    opened_popup = null;
     popup_wrap.classList.remove('popup-wrap_visible');
 }
 function checkButtons(image){
@@ -57,7 +61,7 @@ popup_reminder.addEventListener('click',function(evt){evt.stopPropagation();});
 popup_gallery.addEventListener('click',function(evt){evt.stopPropagation();});
 popup_form.addEventListener('click',function(evt){evt.stopPropagation();});
 
-setTimeout(showPopup,333,popup_reminder);
+setTimeout(showPopup,3333,popup_reminder);
 popup_wrap.addEventListener('click',hidePopup);
 
 
@@ -78,3 +82,35 @@ function enableButton(){
 
 form_number.addEventListener('input',function(){enableButton();});
 form_email.addEventListener('input',function(){enableButton();});
+
+let formData = new FormData(popup_form.querySelector('.popup__form'));
+function postForm(){
+    form_button.textContent = "Submitting...";
+
+    form_button.classList.add('popup__form__submit-button_disabled');
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: formData,
+    })
+    .then((response) => response.json())
+    .then(()=>{
+        for (const [key, value] of formData.entries()) {
+            console.log(`${key} = ${value}`);
+          }
+        setTimeout(function(){
+            form_button.textContent = "Submit";
+            hidePopup();
+            form_button.classList.remove('popup__form__submit-button_disabled');
+        },600)
+    })
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+}
+popup_form.addEventListener('submit',function(evt){
+    evt.preventDefault();
+    postForm();
+})

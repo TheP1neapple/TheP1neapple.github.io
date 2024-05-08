@@ -18,6 +18,11 @@
     font-family: 'Montserrat',sans-serif;
     font-size: 24px;
     font-weight: 400;
+    transition: transform linear 0.05s;
+}
+.form-caller:hover{
+    transform: scale(1.1);
+    cursor: grab;
 }
 .header{  
     margin: 0 0 20vh 0;
@@ -204,6 +209,7 @@
 }
 .popup__button:hover{
     transform: scale(1.2);
+    cursor: grab;
 }
  .popup__button_close{
     width: 32px;
@@ -247,6 +253,9 @@
     border: 1px solid #ccc;
     border-radius: 8px;
  }
+.popup__form::-webkit-scrollbar{
+    display: none;
+}
  .popup__form__text{
     font-weight: 600;
  }
@@ -256,6 +265,7 @@
  }
  .popup__form__input{
     border: none;
+    border-radius: 0;
     outline: none;
     width: 100%;
     margin-bottom: 4%;
@@ -346,6 +356,9 @@
     .interests__list{
         justify-content: center;
     }
+    .popup__form__submit-button{
+        width: 100%;
+    }
 }
 @media all and (max-width: 600px){
     .popup__form__submit-button{
@@ -366,9 +379,6 @@
     }
     .popup__form__submit-button{
         font-size: 12px;
-    }
-    .big-picture:nth-child(1){
-        order: 3;
     }
     .footer__text{
         font-size: 16px;
