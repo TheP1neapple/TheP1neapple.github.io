@@ -13,7 +13,8 @@ let next_button = document.querySelector('.popup__button_next');
 let close_button = document.querySelectorAll('.popup__button_close');
 
 let form_caller = document.querySelector('.form-caller');
-let menu = document.querySelector('.menu')
+let menu = document.querySelector('.menu');
+let fake_menu =  document.querySelector('.fake-menu');
 
 
 function showPopup(popup) {
@@ -140,8 +141,10 @@ popup_form.addEventListener('submit',function(evt){
 window.addEventListener('scroll',function() {
     if (window.scrollY > window.innerHeight) {
         menu.classList.add('menu_fixed');
+        fake_menu.style.display = 'block';
     } else {
       menu.classList.remove('menu_fixed');
+      fake_menu.style.display = 'none';
     }
 });
 
