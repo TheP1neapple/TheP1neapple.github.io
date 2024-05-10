@@ -172,3 +172,5 @@ window.onload=function(){
     let counter = document.querySelector('.counter');
     startCountdown(targetDate,counter);
 }
+
+const animation_space = document.querySelector('.animation');
