@@ -192,21 +192,20 @@ animation_space.addEventListener('mousemove',event=>{
         const posY = Number(defaultPos.get(element).at(1));
         let distanceX = mouseX - container.left - posX;
         let distanceY = mouseY - container.top - posY;
+        let distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
         let radius = Number(element.getAttribute('r'));
 
-        if(radius<posX - 200/distanceX && posX - 200/distanceX < container.width - radius){
-            element.setAttribute('cx',posX - 200/distanceX);
+        if(radius<posX - 100 / distance * distanceX && posX - 100 / distance * distanceX < container.width - radius){
+            element.setAttribute('cx',posX - 100 / distance * distanceX);
         }
-        if(radius<posY -200/distanceY && posY - 200/distanceY < container.height - radius){
-            element.setAttribute('cy',posY - 200/distanceY);
+        if(radius<posY - 100 / distance * distanceY && posY - 100 / distance * distanceY < container.height - radius){
+            element.setAttribute('cy',posY - 100 / distance * distanceY);
         }
     });
 });
-animation_space.addEventListener('mouseleave',resetAnimation());
-
-function resetAnimation(){
+animation_space.addEventListener('mouseleave',function(){
     animated_images.forEach(element =>{
         element.setAttribute('cx',defaultPos.get(element).at(0));
         element.setAttribute('cy',defaultPos.get(element).at(1));
     });
-}
+});
