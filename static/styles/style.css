@@ -13,6 +13,7 @@
    justify-content: space-between;
    height: 60px;
    background-color: #334;
+   box-sizing: border-box;
    min-width: 300px;
    transition: all linear 0.2s;
 }  
@@ -23,7 +24,6 @@
 .menu_fixed{
     position: fixed;
     opacity: 0.95;
-    box-sizing: border-box;
     width: 100%;
 }
 .back-to-top-button{
@@ -55,6 +55,7 @@
     margin: 0 0 20vh 0;
     padding: 4% 0 0 4%;
     min-width: 300px;
+    box-sizing: border-box;
     background-image: linear-gradient(to top, #f43b47 0%, #453a94 100%);
 }
 .header__text{
@@ -294,7 +295,7 @@
     border-radius: 0;
     outline: none;
     width: 100%;
-    margin-bottom: 4%;
+    /* margin-bottom: 4%; */
     transition: all 0.3s;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
  }
@@ -304,7 +305,18 @@
  .popup__form__input:invalid{
     border-bottom: 1px solid #f00;
  }
+ .popup__form__invalid-input{
+    opacity: 0;
+    color: #f00;
+    font-size: 12px;
+    margin:0;
+    transition: all 0.3s;
+ }
+ .popup__form__invalid-input_visible{
+    opacity: 1;
+ }
  .popup__form__textarea{
+    margin-top: 2%;
     width: 100%;
     height: 20vh;
     resize: none;
@@ -368,7 +380,7 @@
 }
 @media all and (max-width: 1240px){
     .header__text{
-        font-size: 100px;
+        font-size: 98px;
         line-height: 92px;
     }
     .big-picture__image{
@@ -385,14 +397,14 @@
         font-size: 20px;
     }
     .header__text{
-        font-size: 60px;
+        font-size: 58px;
         line-height: 52px;
     }
     .personal-info{
         flex-direction: column-reverse;
     }
     .personal-info__text{
-        width: 90vw;
+        width: 90%;
     }
     .big-icon{
         width: 64vw;
@@ -436,7 +448,7 @@
 @media all and (max-width: 475px){
     .header__text{
         min-height: 20vh;
-        font-size: 40px;
+        font-size: 38px;
         line-height: 36px;
     }
     .popup__form__submit-button{

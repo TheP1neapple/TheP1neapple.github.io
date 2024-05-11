@@ -80,19 +80,38 @@ popup_wrap.addEventListener('click',hidePopup);
 
 form_caller.addEventListener('click',showPopup.bind(this,popup_form));
 
-let form_number = popup_form.querySelector('#number_input');
-let form_email = popup_form.querySelector('#email_input');
+let form_name = popup_form.querySelector('#name-input')
+let form_number = popup_form.querySelector('#number-input');
+let form_email = popup_form.querySelector('#email-input');
 let form_button = popup_form.querySelector('.popup__form__submit-button');
 
 function enableButton(){
-    if(form_number.validity.valid && form_email.validity.valid){
+    if(form_name.value!=='' && form_number.validity.valid && form_email.validity.valid){
         form_button.classList.remove('popup__form__submit-button_disabled');
+        popup_form.querySelectorAll('.popup__form__invalid-input').forEach(elem=>{
+            elem.classList.remove('popup__form__invalid-input_visible');
+        });
     }else{
         form_button.classList.add('popup__form__submit-button_disabled');
+        if(form_name.value===''){
+            popup_form.querySelector('#invalid-name').classList.add('popup__form__invalid-input_visible');
+        }else{
+            popup_form.querySelector('#invalid-name').classList.remove('popup__form__invalid-input_visible'); 
+        }
+        if(!form_number.validity.valid){
+            popup_form.querySelector('#invalid-number').classList.add('popup__form__invalid-input_visible');
+        }else{
+            popup_form.querySelector('#invalid-number').classList.remove('popup__form__invalid-input_visible');
+        }
+        if(!form_email.validity.valid){
+            popup_form.querySelector('#invalid-email').classList.add('popup__form__invalid-input_visible');
+        }else{
+            popup_form.querySelector('#invalid-email').classList.remove('popup__form__invalid-input_visible');
+        }
     }
-
 }
 
+form_name.addEventListener('input',function(){enableButton();});
 form_number.addEventListener('input',function(){enableButton();});
 form_email.addEventListener('input',function(){enableButton();});
 
@@ -121,6 +140,7 @@ function postForm(){
                 setTimeout(function(){
                     form_button.textContent = "Submit";
                     form_button.classList.remove('popup__form__submit-button_sent');
+                    popup_form.querySelector('.popup__form').reset();
                 },500);
             },1000)
         },600);
