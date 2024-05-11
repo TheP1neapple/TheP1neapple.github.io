@@ -213,7 +213,7 @@ animation_space.addEventListener('mousemove',event=>{
         let distanceX = mouseX - container.left - posX;
         let distanceY = mouseY - container.top - posY;
         let distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
-        let radius = Number(defaultImages.get(element).at(2)) * (1 + 10 / distance);
+        let radius = Number(defaultImages.get(element).at(2)) * Math.min(2, 1 + 10 / distance);
         element.setAttribute('r',radius);
         if(radius<posX - 100 / distance * distanceX && posX - 100 / distance * distanceX < container.width - radius){
             element.setAttribute('cx',posX - 100 / distance * distanceX);
