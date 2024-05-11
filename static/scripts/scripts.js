@@ -46,6 +46,7 @@ function checkButtons(image){
     }
 }
 function changePopupImage(){
+    popup_image.src = "";
     popup_image.src =current_image.querySelector('.big-picture__image').src;
     checkButtons(current_image);
 }
@@ -174,3 +175,38 @@ window.onload=function(){
 }
 
 const animation_space = document.querySelector('.animation');
+let animated_images = animation_space.querySelectorAll('.animation__image');
+
+const defaultPos = new Map();
+animated_images.forEach(element=>{
+    defaultPos.set(element,[element.getAttribute('cx'),element.getAttribute('cy')]);
+});
+
+animation_space.addEventListener('mousemove',event=>{
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+    
+    let container = animation_space.getBoundingClientRect();
+    animated_images.forEach(element =>{
+        const posX = Number(defaultPos.get(element).at(0));
+        const posY = Number(defaultPos.get(element).at(1));
+        let distanceX = mouseX - container.left - posX;
+        let distanceY = mouseY - container.top - posY;
+        let radius = Number(element.getAttribute('r'));
+
+        if(radius<posX - 200/distanceX && posX - 200/distanceX < container.width - radius){
+            element.setAttribute('cx',posX - 200/distanceX);
+        }
+        if(radius<posY -200/distanceY && posY - 200/distanceY < container.height - radius){
+            element.setAttribute('cy',posY - 200/distanceY);
+        }
+    });
+});
+animation_space.addEventListener('mouseleave',resetAnimation());
+
+function resetAnimation(){
+    animated_images.forEach(element =>{
+        element.setAttribute('cx',defaultPos.get(element).at(0));
+        element.setAttribute('cy',defaultPos.get(element).at(1));
+    });
+}
