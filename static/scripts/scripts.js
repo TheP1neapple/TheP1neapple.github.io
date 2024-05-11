@@ -177,9 +177,9 @@ window.onload=function(){
 const animation_space = document.querySelector('.animation');
 let animated_images = animation_space.querySelectorAll('.animation__image');
 
-const defaultPos = new Map();
+const defaultImages = new Map();
 animated_images.forEach(element=>{
-    defaultPos.set(element,[element.getAttribute('cx'),element.getAttribute('cy')]);
+    defaultImages.set(element,[element.getAttribute('cx'),element.getAttribute('cy'),element.getAttribute('r')]);
 });
 
 animation_space.addEventListener('mousemove',event=>{
@@ -188,24 +188,25 @@ animation_space.addEventListener('mousemove',event=>{
     
     let container = animation_space.getBoundingClientRect();
     animated_images.forEach(element =>{
-        const posX = Number(defaultPos.get(element).at(0));
-        const posY = Number(defaultPos.get(element).at(1));
+        const posX = Number(defaultImages.get(element).at(0));
+        const posY = Number(defaultImages.get(element).at(1));
         let distanceX = mouseX - container.left - posX;
         let distanceY = mouseY - container.top - posY;
         let distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
-        let radius = Number(element.getAttribute('r'));
-
+        let radius = Number(defaultImages.get(element).at(2)) * (1 + 10 / distance);
+        element.setAttribute('r',radius);
         if(radius<posX - 100 / distance * distanceX && posX - 100 / distance * distanceX < container.width - radius){
             element.setAttribute('cx',posX - 100 / distance * distanceX);
         }
         if(radius<posY - 100 / distance * distanceY && posY - 100 / distance * distanceY < container.height - radius){
             element.setAttribute('cy',posY - 100 / distance * distanceY);
         }
-    });
+    }); 
 });
 animation_space.addEventListener('mouseleave',function(){
     animated_images.forEach(element =>{
-        element.setAttribute('cx',defaultPos.get(element).at(0));
-        element.setAttribute('cy',defaultPos.get(element).at(1));
+        element.setAttribute('cx',defaultImages.get(element).at(0));
+        element.setAttribute('cy',defaultImages.get(element).at(1));
+        element.setAttribute('r',defaultImages.get(element).at(2));
     });
 });

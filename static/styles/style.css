@@ -352,6 +352,9 @@
  .animation{
     display: block;
     margin: auto;
+    width: 700px;
+    height: 400px;
+    max-width: 100%;
  }
  .animation__image{
     transition: all ease-out 1s;
