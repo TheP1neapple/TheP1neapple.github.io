@@ -215,12 +215,8 @@ animation_space.addEventListener('mousemove',event=>{
         let distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
         let radius = Number(defaultImages.get(element).at(2)) * Math.min(2, 1 + 10 / distance);
         element.setAttribute('r',radius);
-        if(radius<posX - 100 / distance * distanceX && posX - 100 / distance * distanceX < container.width - radius){
-            element.setAttribute('cx',posX - 100 / distance * distanceX);
-        }
-        if(radius<posY - 100 / distance * distanceY && posY - 100 / distance * distanceY < container.height - radius){
-            element.setAttribute('cy',posY - 100 / distance * distanceY);
-        }
+        element.setAttribute('cx',Math.min(container.width - radius, Math.max(radius, posX - 100 / distance * distanceX)));
+        element.setAttribute('cy',Math.min(container.height - radius, Math.max(radius, posY - 100 / distance * distanceY)));
     }); 
 });
 animation_space.addEventListener('mouseleave',function(){
