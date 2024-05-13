@@ -76,7 +76,7 @@ popup_gallery.addEventListener('click',function(evt){evt.stopPropagation();});
 popup_form.addEventListener('click',function(evt){evt.stopPropagation();});
 
 if(localStorage.getItem('popupClosed')!=='true'){
-    setTimeout(showPopup,777,popup_reminder);
+    setTimeout(showPopup,7777,popup_reminder);
 }
 popup_wrap.addEventListener('click',hidePopup);
 
