@@ -16,7 +16,6 @@ let form_caller = document.querySelector('.form-caller');
 let menu = document.querySelector('.menu');
 let fake_menu =  document.querySelector('.fake-menu');
 
-
 function showPopup(popup) {
     if(opened_popup!=null){
         return;
@@ -27,6 +26,9 @@ function showPopup(popup) {
 }
 
 function hidePopup() {
+    if(opened_popup === popup_reminder){
+        localStorage.setItem('popupClosed', 'true');
+    }
     opened_popup.classList.remove('popup__opened');
     opened_popup = null;
     popup_wrap.classList.remove('popup-wrap_visible');
@@ -73,8 +75,9 @@ popup_reminder.addEventListener('click',function(evt){evt.stopPropagation();});
 popup_gallery.addEventListener('click',function(evt){evt.stopPropagation();});
 popup_form.addEventListener('click',function(evt){evt.stopPropagation();});
 
-
-setTimeout(showPopup,7777,popup_reminder);
+if(localStorage.getItem('popupClosed')!=='true'){
+    setTimeout(showPopup,777,popup_reminder);
+}
 popup_wrap.addEventListener('click',hidePopup);
 
 

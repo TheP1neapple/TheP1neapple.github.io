@@ -147,9 +147,9 @@
                 <fieldset class="popup__form__fieldset">
                     <input class="popup__form__input" type="text" placeholder="Name" name="name" id = "name-input" required>
                     <p class="popup__form__invalid-input" id = "invalid-name">Enter your name</p>
-                    <input class="popup__form__input" type="tel" placeholder="Mobile number" name="number" id="number-input" required pattern="[+][7][0-9]{10}">
-                    <p class="popup__form__invalid-input" id = "invalid-number">Number should be like +7**********</p>
-                    <input class="popup__form__input" type="email" placeholder="E-mail" name="email" id="email-input" required pattern="[a-z0-9_]{2,20}[@][a-z0-9]{1,15}[.][a-z]{2,4}">
+                    <input class="popup__form__input" type="tel" placeholder="Mobile number" name="number" id="number-input" required pattern="(\+7|8)[0-9]{10}">
+                    <p class="popup__form__invalid-input" id = "invalid-number">Number should start with +7 or 8</p>
+                    <input class="popup__form__input" type="email" placeholder="E-mail" name="email" id="email-input" required pattern="[a-z0-9_]{2,}@[a-z0-9]{1,}(\.[a-z]{2,})+">
                     <p class="popup__form__invalid-input" id ="invalid-email">Invalid email</p>
                     <textarea class="popup__form__textarea" placeholder="Message" name="message"></textarea>
                     <button class="popup__form__submit-button popup__form__submit-button_disabled" type="submit">Submit</button>
