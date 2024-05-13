@@ -27,7 +27,7 @@ function showPopup(popup) {
 
 function hidePopup() {
     if(opened_popup === popup_reminder){
-        localStorage.setItem('popupClosed', 'true');
+        sessionStorage.setItem('popupClosed', 'true');
     }
     opened_popup.classList.remove('popup__opened');
     opened_popup = null;
@@ -75,7 +75,7 @@ popup_reminder.addEventListener('click',function(evt){evt.stopPropagation();});
 popup_gallery.addEventListener('click',function(evt){evt.stopPropagation();});
 popup_form.addEventListener('click',function(evt){evt.stopPropagation();});
 
-if(localStorage.getItem('popupClosed')!=='true'){
+if(sessionStorage.getItem('popupClosed')!=='true'){
     setTimeout(showPopup,7777,popup_reminder);
 }
 popup_wrap.addEventListener('click',hidePopup);
