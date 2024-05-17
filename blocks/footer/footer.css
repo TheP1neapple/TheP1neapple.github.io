@@ -1,0 +1,9 @@
+.footer{
+    color: #545454;
+}
+
+@media screen and (max-width: 550px) {
+    .footer{
+        margin-left: 26px;
+    }
+}

@@ -1,0 +1,11 @@
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 4% 0;
+}
+@media screen and (max-width: 550px) {
+    .menu{
+       flex-direction: column;
+    }
+}

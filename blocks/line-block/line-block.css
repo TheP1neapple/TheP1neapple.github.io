@@ -1,0 +1,7 @@
+.line-block{
+    display: flex;
+    margin: 0 0 8px 0;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+}

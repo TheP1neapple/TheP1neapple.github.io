@@ -1,0 +1,11 @@
+.header__divider{
+    margin-top: 20px;
+    border-color: #545454;
+    border-width: 1px;
+}
+
+@media screen and (max-width: 550px) {
+    .header__divider{
+        width: 100%;
+    }
+}

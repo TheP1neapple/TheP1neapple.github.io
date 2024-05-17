@@ -1,0 +1,14 @@
+.form__submit-button{
+    align-self: center;
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    background-color: #000;
+    margin-top: 20px;
+    font-weight: 400;
+    outline: none;
+    border: none;
+}
+.form__submit-button:hover{
+    opacity: 0.8;
+}

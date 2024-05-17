@@ -1,0 +1,22 @@
+.gallery{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    box-sizing: border-box;
+    gap: 2%;
+    margin-bottom: 10%;
+}
+
+@media screen and (max-width: 900px) {
+    .gallery{
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 550px) {
+    .gallery{
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

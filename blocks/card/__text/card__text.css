@@ -1,0 +1,21 @@
+.card__text{
+    margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: 900;
+    max-width: 18vw;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+@media screen and (min-width: 1360px) {
+    .card__text{
+        max-width: 14vw;
+    }
+}
+@media screen and (max-width: 900px) {
+    .card__text{
+        max-width: 160px;
+    }
+}

@@ -1,0 +1,10 @@
+.info{
+    margin-left: 4%;
+    color: #fff;
+}
+
+@media screen and (max-width: 550px) {
+    .info{
+        max-width: 100%;
+    }
+}
