@@ -1,89 +1,88 @@
 <!DOCTYPE html>
-<html lang="ru" title="">
+<html lang="ru">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Really cool page">
         <meta name="author" content="Sergey Kravchenko">
-        <link rel="stylesheet" href="index.css">
-        <title></title>
+        <link rel="stylesheet" href="pages/index.css">
+        <title>Проект Mesto</title>
     </head>
     <body class="page">
       <header class="header">
-        <img class="header__image" src="./images/logo.svg">
-        <hr class="header__divider">
+        <img class="header__image" src="./images/logo.svg" alt="Логотип проекта">
       </header>
       <main class="main">
-        <section class="menu">
-            <div class="profile">
-                <img class="profile__image" src="./images/avatar.jpg">
-                <div class="info">
-                    <div class="line-block">
-                        <h1 class="info__name">Жак-Ив Кусто</h1>
-                        <button class="info__edit-button"></button>
+        <section class="profile">
+            <div class="profile__main-block">
+                <img class="profile__image" src="./images/avatar.jpg" alt="Аватар профиля">
+                <div class="profile__info">
+                    <div class="profile__line-block">
+                        <h1 class="profile__name">Жак-Ив Кусто</h1>
+                        <button class="profile__edit-button" type="button" aria-label="Редактировать"></button>
                     </div>
-                    <p class="info__description">Исследователь океана</p>
+                    <p class="profile__description">Исследователь океана</p>
                 </div>
             </div>
-            <button class="menu__add-button"></button>
+            <button class="profile__add-button" type="button" aria-label="Добавить"></button>
         </section>
         <section class="gallery">
-            <div class="card">
-                <img class="card__image" src="./images/kirill-pershin-1088404-unsplash.jpg">
+            <article class="card">
+                <img class="card__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск">
                 <div class="card__info">
-                    <p class="card__text">Карачаевск</p>
-                    <button class="card__like-button"></button>
+                    <h3 class="card__text">Карачаевск</h3>
+                    <button class="card__like-button" type="button" aria-label="Нравится"></button>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="./images/kirill-pershin-1404681-unsplash.png">
+            </article>
+            <article class="card">
+                <img class="card__image" src="./images/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус">
                 <div class="card__info">
-                    <p class="card__text">Гора Эльбрус</p>
-                    <button class="card__like-button"></button>
+                    <h3 class="card__text">Гора Эльбрус</h3>
+                    <button class="card__like-button" type="button" aria-label="Нравится"></button>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="./images/kirill-pershin-1556355-unsplash.png">
+            </article>
+            <article class="card">
+                <img class="card__image" src="./images/kirill-pershin-1556355-unsplash.png" alt="Домбай">
                 <div class="card__info">
-                    <p class="card__text">Домбай</p>
-                    <button class="card__like-button"></button>
+                    <h3 class="card__text">Домбай</h3>
+                    <button class="card__like-button" type="button" aria-label="Нравится"></button>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="./images/kirill-pershin-1404681-unsplash.png">
+            </article>
+            <article class="card">
+                <img class="card__image" src="./images/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус">
                 <div class="card__info">
-                    <p class="card__text">Гора Эльбрус</p>
-                    <button class="card__like-button"></button>
+                    <h3 class="card__text">Гора Эльбрус</h3>
+                    <button class="card__like-button" type="button" aria-label="Нравится"></button>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="./images/kirill-pershin-1556355-unsplash.png">
+            </article>
+            <article class="card">
+                <img class="card__image" src="./images/kirill-pershin-1556355-unsplash.png" alt="Домбай">
                 <div class="card__info">
-                    <p class="card__text">Домбай</p>
-                    <button class="card__like-button"></button>
+                    <h3 class="card__text">Домбай</h3>
+                    <button class="card__like-button" type="button" aria-label="Нравится"></button>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="./images/kirill-pershin-1088404-unsplash.jpg">
+            </article>
+            <article class="card">
+                <img class="card__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаево-Черкессия">
                 <div class="card__info">
-                    <p class="card__text">Карачаево-Черкессия</p>
-                    <button class="card__like-button"></button>
+                    <h3 class="card__text">Карачаево-Черкессия</h3>
+                    <button class="card__like-button" type="button" aria-label="Нравится"></button>
                 </div>
-            </div>
+            </article>
         </section>
       </main>
       <footer class="footer">
-        <p class="footer__text">&copy 2020 Mesto Russia</p>
+        <p class="footer__text">&copy; 2020 Mesto Russia</p>
       </footer>
-      <div class="popup popup_opened">
+      <div class="popup">
         <div class="popup__container">
             <p class="popup__text">Редактировать профиль</p>
-            <form class="form">
+            <form class="form" name="edit-profile-form">
                 <input class="form__input" type="text" value="Жак-Ив Кусто">
                 <input class="form__input" type="text" value="Исследователь океана">
                 <button class="form__submit-button" type="submit">Сохранить</button>
             </form>
-            <button class="popup__close-button"></button>
+            <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
         </div>
       </div>
     <script src="scripts/scripts.js"></script>

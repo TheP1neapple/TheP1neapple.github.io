@@ -1,0 +1,14 @@
+.profile__edit-button{
+    background: url("../../../images/edit_button.svg") no-repeat center;
+    outline: none;
+    border: 1px solid #fff;
+    padding: 0;
+    margin-left:18px;
+    background-color: rgba(0,0,0,0);
+    width: 24px;
+    height: 24px;
+}
+.profile__edit-button:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}

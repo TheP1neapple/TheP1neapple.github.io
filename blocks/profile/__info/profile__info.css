@@ -1,0 +1,16 @@
+.profile__info{
+    padding: 22px 0 25px 30px;
+    color: #fff;
+}
+
+@media screen and (max-width: 900px) {
+    .profile__info{
+        padding: 0 0 0 10px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .profile__info{
+        max-width: 100%;
+        padding: 0;
+    }
+}

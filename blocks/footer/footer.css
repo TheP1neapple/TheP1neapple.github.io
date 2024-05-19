@@ -1,5 +1,7 @@
 .footer{
     color: #545454;
+    margin: 0 auto 60px auto;
+    max-width: 880px;
 }
 
 @media screen and (max-width: 550px) {
