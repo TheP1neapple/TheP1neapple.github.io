@@ -147,29 +147,37 @@ function postForm(){
         body: formData,
     })
     .then((response) => response.json())
-    .then(()=>{
+    .then(data =>{
         for (const [key, value] of formData.entries()) {
             console.log(`${key} = ${value}`);
-          }
+        }
         setTimeout(function(){
             form_button.classList.remove('popup-form__submit-button_disabled');
-            form_button.classList.add('popup-form__submit-button-sent');
+            form_button.classList.add('popup-form__submit-button_sent');
             form_button.textContent = "Submitted";
             setTimeout(function(){
                 hidePopup();
                 setTimeout(function(){
                     form_button.textContent = "Submit";
-                    form_button.classList.remove('popup-form__submit-button-sent');
+                    form_button.classList.remove('popup-form__submit-button_sent');
                     popup_form.querySelector('.popup-form').reset();
                 },500);
             },1000)
         },600);
     })
-    .then(data => {
-        console.log(data);
-    })
     .catch(error => {
         console.log(error);
+        setTimeout(function(){
+            form_button.classList.remove('popup-form__submit-button_disabled');
+            form_button.classList.add('popup-form__submit-button_failed');
+            form_button.textContent = "Failed";
+            setTimeout(function(){
+                setTimeout(function(){
+                    form_button.textContent = "Submit";
+                    form_button.classList.remove('popup-form__submit-button_failed');
+                },1000);
+            },1000)
+        },600);
     });
 }
 

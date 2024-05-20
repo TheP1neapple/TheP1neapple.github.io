@@ -351,11 +351,17 @@
     cursor: none;
     pointer-events: none;
  }
- .popup-form__submit-button-sent{
+ .popup-form__submit-button_sent{
     opacity: 1;
     cursor: none;
     pointer-events: none;
     background-color: #0c0;
+ }
+ .popup-form__submit-button_failed{
+    opacity: 1;
+    cursor: none;
+    pointer-events: none;
+    background-color: #f00;
  }
  .counter{
     display: flex;
