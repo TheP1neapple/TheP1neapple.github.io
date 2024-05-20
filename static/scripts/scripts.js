@@ -8,9 +8,9 @@ let current_image;
 let opened_popup = null;
 let formDate;
 
-let before_button = document.querySelector('.popup__button_before');
-let next_button = document.querySelector('.popup__button_next');
-let close_button = document.querySelectorAll('.popup__button_close');
+let before_button = document.querySelector('.popup__button-before');
+let next_button = document.querySelector('.popup__button-next');
+let close_button = document.querySelectorAll('.popup__button-close');
 
 let form_caller = document.querySelector('.form-caller');
 let menu = document.querySelector('.menu');
@@ -86,30 +86,47 @@ form_caller.addEventListener('click',showPopup.bind(this,popup_form));
 let form_name = popup_form.querySelector('#name-input')
 let form_number = popup_form.querySelector('#number-input');
 let form_email = popup_form.querySelector('#email-input');
-let form_button = popup_form.querySelector('.popup__form__submit-button');
+let form_button = popup_form.querySelector('.popup-form__submit-button');
+let form_textarea = popup_form.querySelector('.popup-form__textarea');
+
+function MessageValid(){
+    let first_en = /[a-zA-z]/.exec(form_textarea.value);
+    let first_ru = /[а-яА-яЁё]/.exec(form_textarea.value)
+    if(first_ru!==null && first_en!==null){
+        return false;
+    }
+    return true;
+}
 
 function enableButton(){
-    if(form_name.value!=='' && form_number.validity.valid && form_email.validity.valid){
-        form_button.classList.remove('popup__form__submit-button_disabled');
-        popup_form.querySelectorAll('.popup__form__invalid-input').forEach(elem=>{
-            elem.classList.remove('popup__form__invalid-input_visible');
+    if(form_name.value!=='' && form_number.validity.valid && form_email.validity.valid && MessageValid()){
+        form_button.classList.remove('popup-form__submit-button_disabled');
+        popup_form.querySelectorAll('.popup-form__invalid-input').forEach(elem=>{
+            elem.classList.remove('popup-form__invalid-input_visible');
         });
     }else{
-        form_button.classList.add('popup__form__submit-button_disabled');
+        form_button.classList.add('popup-form__submit-button_disabled');
         if(form_name.value===''){
-            popup_form.querySelector('#invalid-name').classList.add('popup__form__invalid-input_visible');
+            popup_form.querySelector('#invalid-name').classList.add('popup-form__invalid-input_visible');
         }else{
-            popup_form.querySelector('#invalid-name').classList.remove('popup__form__invalid-input_visible'); 
+            popup_form.querySelector('#invalid-name').classList.remove('popup-form__invalid-input_visible'); 
         }
         if(!form_number.validity.valid){
-            popup_form.querySelector('#invalid-number').classList.add('popup__form__invalid-input_visible');
+            popup_form.querySelector('#invalid-number').classList.add('popup-form__invalid-input_visible');
         }else{
-            popup_form.querySelector('#invalid-number').classList.remove('popup__form__invalid-input_visible');
+            popup_form.querySelector('#invalid-number').classList.remove('popup-form__invalid-input_visible');
         }
         if(!form_email.validity.valid){
-            popup_form.querySelector('#invalid-email').classList.add('popup__form__invalid-input_visible');
+            popup_form.querySelector('#invalid-email').classList.add('popup-form__invalid-input_visible');
         }else{
-            popup_form.querySelector('#invalid-email').classList.remove('popup__form__invalid-input_visible');
+            popup_form.querySelector('#invalid-email').classList.remove('popup-form__invalid-input_visible');
+        }
+        if(!MessageValid()){
+            popup_form.querySelector('#invalid-message').classList.add('popup-form__invalid-input_visible');
+            form_textarea.classList.add('popup-form__textarea__invalid');
+        }else{
+            popup_form.querySelector('#invalid-message').classList.remove('popup-form__invalid-input_visible');
+            form_textarea.classList.remove('popup-form__textarea__invalid');
         }
     }
 }
@@ -117,13 +134,13 @@ function enableButton(){
 form_name.addEventListener('input',function(){enableButton();});
 form_number.addEventListener('input',function(){enableButton();});
 form_email.addEventListener('input',function(){enableButton();});
-
+form_textarea.addEventListener('input',function(){enableButton();});
 
 function postForm(){
-    formData = new FormData(popup_form.querySelector('.popup__form'));
+    formData = new FormData(popup_form.querySelector('.popup-form'));
 
     form_button.textContent = "Submitting...";
-    form_button.classList.add('popup__form__submit-button_disabled');
+    form_button.classList.add('popup-form__submit-button_disabled');
 
     fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
@@ -135,15 +152,15 @@ function postForm(){
             console.log(`${key} = ${value}`);
           }
         setTimeout(function(){
-            form_button.classList.remove('popup__form__submit-button_disabled');
-            form_button.classList.add('popup__form__submit-button_sent');
+            form_button.classList.remove('popup-form__submit-button_disabled');
+            form_button.classList.add('popup-form__submit-button-sent');
             form_button.textContent = "Submitted";
             setTimeout(function(){
                 hidePopup();
                 setTimeout(function(){
                     form_button.textContent = "Submit";
-                    form_button.classList.remove('popup__form__submit-button_sent');
-                    popup_form.querySelector('.popup__form').reset();
+                    form_button.classList.remove('popup-form__submit-button-sent');
+                    popup_form.querySelector('.popup-form').reset();
                 },500);
             },1000)
         },600);

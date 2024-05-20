@@ -133,29 +133,30 @@
             <div class="popup__container">
                 <p class="popup__text">It's been 7777 ms since you opened this page!</p>
             </div>
-            <button class="popup__button popup__button_close" onclick="hidePopup()"></button>
+            <button class="popup__button popup__button-close" onclick="hidePopup()"></button>
         </div> 
         <div class="popup" id="popup-gallery">
             <img class="popup__image" alt="chosen picture">
-            <button class="popup__button popup__button_close" onclick="hidePopup()"></button>
-            <button class="popup__button popup__button_before" onclick="showBefore()"></button>
-            <button class="popup__button popup__button_next" onclick="showNext()"></button>
+            <button class="popup__button popup__button-close" onclick="hidePopup()"></button>
+            <button class="popup__button popup__button-before" onclick="showBefore()"></button>
+            <button class="popup__button popup__button-next" onclick="showNext()"></button>
         </div> 
         <div class="popup" id="popup-form">
-            <form class="popup__form">
-                <p class="popup__form__text">Form for your feedback</p>
-                <fieldset class="popup__form__fieldset">
-                    <input class="popup__form__input" type="text" placeholder="Name" name="name" id = "name-input" required>
-                    <p class="popup__form__invalid-input" id = "invalid-name">Enter your name</p>
-                    <input class="popup__form__input" type="tel" placeholder="Mobile number" name="number" id="number-input" required pattern="(\+7|8)[0-9]{10}">
-                    <p class="popup__form__invalid-input" id = "invalid-number">Number should start with +7 or 8</p>
-                    <input class="popup__form__input" type="email" placeholder="E-mail" name="email" id="email-input" required pattern="[a-z0-9_]{2,}@[a-z0-9]{2,}(\.[a-z]{2,})+">
-                    <p class="popup__form__invalid-input" id ="invalid-email">Invalid email</p>
-                    <textarea class="popup__form__textarea" placeholder="Message" name="message"></textarea>
-                    <button class="popup__form__submit-button popup__form__submit-button_disabled" type="submit">Submit</button>
+            <form class="popup-form">
+                <p class="popup-form__text">Form for your feedback</p>
+                <fieldset class="popup-form__fieldset">
+                    <input class="popup-form__input" type="text" placeholder="Name" name="name" id = "name-input" required>
+                    <p class="popup-form__invalid-input" id = "invalid-name">Enter your name</p>
+                    <input class="popup-form__input" type="tel" placeholder="Mobile number" name="number" id="number-input" required pattern="(\+7|8)[0-9]{10}">
+                    <p class="popup-form__invalid-input" id = "invalid-number">Number should start with +7 or 8</p>
+                    <input class="popup-form__input" type="email" placeholder="E-mail" name="email" id="email-input" required pattern="[a-z0-9_]{2,}@[a-z0-9]{2,}(\.[a-z]{2,})+">
+                    <p class="popup-form__invalid-input" id ="invalid-email">Invalid email</p>
+                    <textarea class="popup-form__textarea" placeholder="Message" name="message"></textarea>
+                    <p class="popup-form__invalid-input" id ="invalid-message">Your message should contain single language</p>
+                    <button class="popup-form__submit-button popup-form__submit-button_disabled" type="submit">Submit</button>
                 </fieldset>
             </form>
-            <button class="popup__button popup__button_close" onclick="hidePopup()"></button>
+            <button class="popup__button popup__button-close" onclick="hidePopup()"></button>
         </div>
     </div>
 
